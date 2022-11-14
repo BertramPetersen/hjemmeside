@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sigrids Hjemmeside</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,30 +10,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
 <section class="header">
-    <nav>
+    <nav class="navbar">
         <a href="index.html"><img src="assets/logo-white.svg"></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="About us.html">OM SIGRID</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="About us.html">UNDERVISNING</a></li>
                     <li><a href="">TRÆNING</a></li>
-                    <li><a href="">BLOG</a></li>
+                    <li><a href="">KOMMISSION</a></li>
                     <li><a href="">KONTAKT</a></li>
                 </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>    
-
+    </nav> 
 <div class="text-box">
     <h1>Sigrids Isheste</h1>
     <p> Heste har altid fyldt meget i mit liv, og jeg har redet siden, jeg var 8 år, ja, før jeg fik min pony, red jeg på vores får Jeg underviste mit første hold i ridning, da jeg var 14 år, og efter min ponytid tabte jeg fuldstændig mit hjerte til islænder hestene og deres ”folk”. 
     </p>
     <a href=""class="hero-btn">Klik her for at læse mere</a>
 </div>
-
 </section>
+
 <!------ Course ----------->
 <section class="course-parent">
     <div class="course">
@@ -45,7 +45,7 @@
                 <ul>
                     <li>Få styr på nerverne, klasserne og det praktiske</li>
                     <li>Få feedback på din ridning</li>
-                    <li>Visning af heste til stævner</li>
+                    <li>Fremvisning af heste til stævner</li>
                 </ul>
             </div>
             <div class="course-col">
@@ -83,10 +83,12 @@
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, voluptatem quibusdam nobis enim consequatur dignissimos non voluptatibus veritatis suscipit commodi reiciendis, dolorem id soluta consectetur quia libero perferendis nam nulla.</p>
     <div class="row">
         <div class="campus-col">
+            <a class="logo" href="https://www.instagram.com/sig_rid/">
             <img src="assets/instagram.jpg">
             <div class="layer">
                 <h3>INSTAGRAM</h3>
             </div>
+            </a>
         </div>
         <div class="campus-col">
             <img src="assets/facebook.jpg">
@@ -139,6 +141,27 @@
 </script>
 
 <!----------- Sticky navbar ---------->
+<script>
+    window.onscroll = function(){navTransform()};
+
+    function navTransform(){
+        var navbar = document.getElementsByClassName("navbar")[0];
+        var logo = document.getElementsByClassName("logo")[0];
+        var navlinks = document.getElementsByClassName("nav-links")[0];
+
+        if (document.documentElement.scrollTop > 50){
+            navbar.classList.add("sticky");
+            var list = navlinks.getElementsByTagName("li");
+            for (let i = 0; i < list.length; i++) {
+                list[i].style.bottom = "0px";
+            }
+            logo.classList.add("sticky-img");
+        } else {
+            navbar.classList.remove("sticky");
+            logo.classList.remove("sticky-img");
+        }
+    }
+</script>
 
 </body>
 </html>
