@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 <section class="header">
     <nav class="navbar">
         <a href="index.html"><img src="assets/logo-white.svg"></a>
@@ -150,15 +149,14 @@
         var navlinks = document.getElementsByClassName("nav-links")[0];
 
         if (document.documentElement.scrollTop > 50){
-            navbar.classList.add("sticky");
-            var list = navlinks.getElementsByTagName("li");
-            for (let i = 0; i < list.length; i++) {
-                list[i].style.bottom = "0px";
-            }
-            logo.classList.add("sticky-img");
+            navbar.classList.add('sticky');
+            navlinks.classList.add('sticky-nav-links');
+            // for (let i = 0; i < list.length; i++) {
+            //     list[i].classList.add('sticky-nav-links');
+            // }
         } else {
-            navbar.classList.remove("sticky");
-            logo.classList.remove("sticky-img");
+            navbar.classList.remove('sticky');
+            navlinks.classList.remove('sticky-nav-links');
         }
     }
 </script>
