@@ -30,19 +30,30 @@ nav img{
 .sticky{
     transition: all linear .5s;
     padding: 0 6%;
-    background-color: rgba(241, 197, 197, 0.9);
+    background-color: rgba(241, 197, 197, 0.5);
     z-index: 9;
+}
+.sticky:hover
+{
+    transition: .3s;
+    background-color: rgba(241, 197, 197, 0.9);
+}
+.sticky:hover .sticky-nav-links ul li a{
+    font-weight: 600;
 }
 .sticky img{
     padding: 5px 0;
     width: 60px;
     filter: invert(100%);
+    opacity: 20%;
+}
+.sticky:hover img{
+    opacity: 100%;
 }
 
 .nav-links{
     flex: 1;
     text-align: right;
-
 }
 .nav-links ul li{
     list-style: none;
@@ -55,26 +66,33 @@ nav img{
 }
 .sticky-nav-links ul li{
     transition: all linear .5s;
+    margin-left: 5px;
     bottom: 0;
     padding: 2px 3px;
     color: #777;
-    border: 1px solid rgba(255, 255, 255, 0.49);
-    border-radius: 5px;
-    background: #130a0120;
+    border-radius: 2px;
+    /* background: #130a017e; */
 }
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
     font-size: 13px;
 }
-.sticky-nav-links ul li a{
-    color: rgb(52, 52, 52);
+.sticky .nav-links ul li a{
+    color: #555;
+    font-weight: 300;
+    padding: 0 5px;
+}
+.sticky-nav-links ul li:hover{
+    border: 1px #130a01;
+    background: #130a01;
+    transition: 0.7s;
+    color: rgb(241, 197, 197);
 }
 .nav-links ul li:hover{
     border: 1px #130a01;
-    background: #130a018c;
+    background: #130a01;
     display: inline-block;
-    margin: auto;
     transition: 0.7s;
     color: rgb(241, 197, 197);
 }
@@ -157,7 +175,9 @@ nav .fa{
     }
 }
 /*---- course -----*/
-
+.course-parent{
+    width: 100%;
+}
 .course{
     width: 80%;
     margin: auto;
@@ -171,19 +191,17 @@ h1{
 .course p{
     color: #777;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 22px;
     padding: 10px;
-    margin-top: 35px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 35px 10px 0px;
 }
 .row{
-    margin: 5% 15%;
+    margin: 5% 10%;
     display: flex;
     justify-content: space-between;
 }
-.course-col{
+.course-col, .undervisning-col {
     flex-basis: 47%;
     background: rgba(241, 197, 197, 0.7);
     border-radius: 10px;
@@ -191,20 +209,21 @@ h1{
     padding: 20px 12px;
     box-sizing: border-box;
 }
-.course-col ul{
+.course-col ul, .undervisning-col ul{
     position: relative;
     margin: auto;
+    align-items: center;
     justify-content: center;
 }
-.course-col ul li{
+.course-col ul li, .undervisning-col ul li{
     display: list-item;
     list-style: none;
-    padding: 5px 0;
-    color: #777; 
+    padding: 5px 10px;
+    color: #555;
     /* color: rgb(241, 197, 197); */
-    text-align: justify center;
+    text-align: center;
 }
-.course-col p{
+.course-col p, .undervisning-col p{
     text-align: center;
     font-size: 14px;
     font-weight: 300;
@@ -334,3 +353,7 @@ h3{
 .sub-header h1{
     margin-top: 45px;
 }
+.undervisning-col{
+    flex-basis: 60%;
+}
+
